@@ -20,3 +20,4 @@ ResetTimer 			KEYWORD2
 StartTimer 			KEYWORD2
 StopTimer 			KEYWORD2
 UpdateTimer 		KEYWORD2
+isTimerExpired		KEYWORD2

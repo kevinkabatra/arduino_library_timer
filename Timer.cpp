@@ -14,6 +14,7 @@ void Timer::init(bool& shouldTimerStart) {
 		_isTimerRunning = true;
 	}
 
+	isTimerExpired = false;
 	_lastMillisecondReading = _startMillisecond;
 	_remainingTime = ConvertToMilliseconds(_unitOfTime, _quantityOfTimeUnit);
 }
@@ -26,7 +27,7 @@ void Timer::init(bool& shouldTimerStart) {
 		Day    = 86,400,000
 */
 unsigned long Timer::ConvertToMilliseconds(TimeUnit& unitOfTime, short& quantityOfTimeUnit) {
-	switch(_unitOfTime) {
+	switch(unitOfTime) {
 		case Timer::TimeUnit::Second:
 			return (1000UL * quantityOfTimeUnit); 
 		case Timer::TimeUnit::Minute:
@@ -91,8 +92,9 @@ unsigned long Timer::UpdateTimer() {
 		subtrahend = currentMillisecond - _lastMillisecondReading;
 	}
 
+	//Has the timer run out of time
 	if(_remainingTime < subtrahend) {
-		_remainingTime = ConvertToMilliseconds(_unitOfTime, _quantityOfTimeUnit);	
+		isTimerExpired = true;
 	}
 	else {
 		_remainingTime = _remainingTime - subtrahend;

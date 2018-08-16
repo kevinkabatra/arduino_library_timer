@@ -31,6 +31,7 @@ class Timer {
 		bool StopTimer();
 		unsigned long UpdateTimer();
 
+		bool isTimerExpired;
 	private:
 		bool _isTimerRunning;
 		unsigned long _lastMillisecondReading;
