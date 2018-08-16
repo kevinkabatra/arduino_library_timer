@@ -1,0 +1,22 @@
+
+#######################################
+# Syntax Coloring Map For Timer
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+Timer				KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+GetIsTimerRunning 	KEYWORD2
+GetRemainingTime  	KEYWORD2
+init				KEYWORD2
+ResetTimer 			KEYWORD2
+StartTimer 			KEYWORD2
+StopTimer 			KEYWORD2
+UpdateTimer 		KEYWORD2
